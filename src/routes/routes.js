@@ -15,3 +15,4 @@ app.get('/:id', (req, res) => controller.getById(req, res))
 
 module.exports = app
 
+//routes aren't numerous or complex enough to justify splitting into multiple files.
