@@ -1,20 +1,19 @@
 const sqlite3 = require('sqlite3').verbose();
-
-const db = new sqlite3.Database('src/database/favorite.db', sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-      console.error(err.message);
-    } else {
-        console.log('connected to database')
-    }
+const knex = require('knex')({
+  client: 'sqlite3',
+  connection: {
+    filename: "src/database/favorite.db"
+  },
+  useNullAsDefault: true
 });
 
 //I decided to keep an open 'connection' on purpose.
 //I probably wouldn't have done that on a web db.
-//Also, I didn't used Sequelize as an ORM on purpose to keep it simple and tight.
-//Looking back now, i realize how much easier it'd have been if I used knex.
-//TODO: migrate to Knex.
+//Also, I didn't used Sequelize or other ORM on purpose: the database is too small to justify it.
+//decided on knex because it reduces callback hell, and abstracts the SQL 
+//I've made this entire project using querries before getting knex in here lol
 
-module.exports = db
+module.exports = knex
 
 /*
 SQL for the table:
@@ -25,4 +24,6 @@ CREATE TABLE "favorite" (
 	"rating"	INTEGER NOT NULL,
 	PRIMARY KEY("user","appid")
 ) WITHOUT ROWID;
+
+yeah, i know i shouldn't have put it here, but that's a way to show the database to you all.
 */
