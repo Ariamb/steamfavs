@@ -1,5 +1,9 @@
-const api = require('./src/routes/routes.js')
+const api = require('./src/routes/routes')
+
+
+
+
 
 api.listen(8000, () =>
-    console.log('server on')
+    console.log('server listening on port 8000')
 )
