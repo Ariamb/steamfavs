@@ -31,15 +31,15 @@ module.exports = {
     },
     create: async function (req, res) {
         const user = req.get('user-hash')
-        const {appid, nota} = req.body
-        db.run(`INSERT INTO favorite(user, appid, nota) VALUES((?),(?),(?))`, [user, appid, nota], function(err) {
+        const {appid, rating} = req.body
+        db.run(`INSERT INTO favorite(user, appid, rating) VALUES((?),(?),(?))`, [user, appid, rating], function(err) {
             if (err) return console.log(err.message)
         })
         res.send(
         JSON.stringify({
             'user-hash': user,
             'appid': appid,
-            'nota': nota
+            'rating': rating
         })) //cute little response
         
     },

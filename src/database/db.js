@@ -22,7 +22,7 @@ SQL for the table:
 CREATE TABLE "favorite" (
 	"user"	TEXT,
 	"appid"	INTEGER,
-	"nota"	INTEGER NOT NULL,
+	"rating"	INTEGER NOT NULL,
 	PRIMARY KEY("user","appid")
 ) WITHOUT ROWID;
 */
