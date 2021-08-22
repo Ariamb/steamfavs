@@ -1,1 +1,32 @@
 # steamfavs
+By Ariam Moresco Bartsch.
+  
+A back-end selection project for App Master! check then out: https://appmasters.io/en/
+
+Project deployed online at https://steamfavs.herokuapp.com/
+
+## Including: 
+
+### Basic reqs:
+- [x] GET on /
+- [x] GET on /:id
+
+### Additional reqs:
+- [x] POST on /favorite/
+- [x] DELETE on /favorite/:appid
+- [x] GET on /favorite/
+
+### Extra reqs:
+- [x] caching (with node-cache)
+- [x] deployed on heroku (https://steamfavs.herokuapp.com/)
+
+**Overall info**:
+- Using NPM as packet manager;
+- Using Express for routing;
+- Using SQLite3 for database;
+- Using Knex for query building/database acess;
+- Using node-cache for caching;
+- Using CORS for allowed acess;
+Honorable mentions for tools using during development: DB browser (SQLite), Postman, Visual Studio Code and Spotify.
+
+<sub>Programar totalmente em inglês (até em docs e commits) é uma prática que adoto a quase dois anos.<sub>
