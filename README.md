@@ -22,7 +22,7 @@ Project deployed online at https://steamfavs.herokuapp.com/
 
 **Overall info**:
 
-Time spent: around 14 hours (5 of which were spent repurposing, tweaking and beautifying code)
+Time spent: around 16 hours (5 of which were spent repurposing, tweaking and beautifying code, plus one hour spent on this readme file)
 - Using NPM as packet manager;
 - Using Express for routing;
 - Using SQLite3 for database;
