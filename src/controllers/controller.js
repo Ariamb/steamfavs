@@ -2,11 +2,11 @@ const axios = require('axios')
 
 const steamCache = require('./../cache/steamCache')
 const detailsCache = require('../cache/detailsCache')
+
 module.exports = {
     getAll: async function (req, res) {
         const cachedData = steamCache.get(0)
         if (cachedData == undefined){
-            console.log('nothing on cache')
             const gameData = await axios.get('https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json')
             steamCache.set(0, gameData.data.applist.apps)
             res.send(gameData.data.applist.apps)
