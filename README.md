@@ -30,5 +30,5 @@ Time spent: around 14 hours (5 of which were spent repurposing, tweaking and bea
 - Using node-cache for caching;
 - Using CORS for allowed acess;
 Honorable mentions for tools using during development: DB browser (SQLite), Postman, Visual Studio Code and Spotify.
-
+Postman docs: https://www.getpostman.com/collections/14c6af8588035773d4c6
 <sub>Programar totalmente em inglês (até em docs e commits) é uma prática que adoto a quase dois anos.<sub>
