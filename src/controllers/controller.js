@@ -7,15 +7,12 @@ module.exports = {
     getAll: async function (req, res) {
         const cachedData = steamCache.get(0)
         if (cachedData == undefined){
-            const gameData = await axios.get('https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json')
-            steamCache.set(0, gameData.data.applist.apps)
-            res.send(gameData.data.applist.apps)
+            const gameData = await axios.get('https://simple-api-selection.herokuapp.com/list-games/?title=race')
+            steamCache.set(0, gameData.data.applist.apps.app)
+            res.send(gameData.data.applist.apps.app)
         } else res.send(cachedData)
-        //caching the getAll to increase performance on multiple requests
-        //infinite TTL on purpose
-        //still slow though. A lot of data to send as response.
-        //decided to not use the limiter route sent by email. 
-        //This caching alone was good enough to improve my local performance
+        //using the given API to reduce calls. I'd use ?title=winter so i get even less results (369)
+        //but by using the given "race" i know it will be cached on your end.
         
     },
     getById: async function (req, res) {
@@ -29,7 +26,7 @@ module.exports = {
         
         //json doesnt allow numbers as keys. 
         //Trying to avoid possible front end issues by removing the appid key, which is a number. 
-        //gameData.data[appid].data is just to reduce amount of useless data. formatting, if you will        
+        //gameData.data[appid].data is just to reduce amount of useless json attribs. formatting, if you will        
     }
 }
 
